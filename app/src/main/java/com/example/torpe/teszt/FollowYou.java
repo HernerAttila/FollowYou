@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 public class FollowYou extends Service {
     private static String TAG = "FollowYou";
     private TrackGPS GPS = new TrackGPS();
+    private StatusCode status = new StatusCode();
     Calendar c = Calendar.getInstance();;
     SimpleDateFormat df = new SimpleDateFormat("YYYY.MM.dd HH:mm:ss");
     String formattedDate = df.format(c.getTime());
@@ -36,7 +37,7 @@ public class FollowYou extends Service {
         Log.d(TAG, "Latitude".concat( new Double(Latitude).toString() ) );
         Log.d(TAG, "DateTime: " + formattedDate );
         ServerCommunication communication = new ServerCommunication();
-        communication.SendLocation(Latitude,Longitude,formattedDate);
+        communication.SendLocation(Latitude,Longitude,formattedDate,status.getStatusCode());
         this.stopSelf();
     }
 
