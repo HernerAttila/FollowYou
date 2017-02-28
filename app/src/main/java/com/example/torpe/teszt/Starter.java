@@ -15,7 +15,7 @@ public class Starter extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG,"ittvagyok");
+        Log.d(TAG,"ittvagyok_2");
         startService(new Intent(this, FollowYou.class));
     }
 
